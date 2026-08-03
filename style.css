@@ -10,7 +10,7 @@
 
 body{
 
-    background:#f5f5f5;
+    background:#000;
     font-family:Arial, Helvetica, sans-serif;
 
     display:flex;
@@ -33,7 +33,7 @@ body{
 
     width:min(95vw,700px);
 
-    margin:25px auto;
+    margin:0 auto;
 
 }
 
