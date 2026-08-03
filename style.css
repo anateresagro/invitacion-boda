@@ -9,6 +9,7 @@
 }
 
 body{
+
     background:#f5f5f5;
     font-family:Arial, Helvetica, sans-serif;
 
@@ -17,6 +18,7 @@ body{
     align-items:center;
 
     overflow-x:hidden;
+
 }
 
 /* ==========================
@@ -27,20 +29,21 @@ body{
 
     position:relative;
 
-    width:100%;
-    max-width:700px;
+    width:min(95vw,700px);
 
-    margin:25px 0;
+    margin:25px auto;
 
 }
 
 .page img{
 
-    width:100%;
     display:block;
 
-}
+    width:100%;
 
+    height:auto;
+
+}
 
 /* ==========================
       BOTÓN MÚSICA
@@ -53,22 +56,29 @@ body{
     top:20px;
     right:20px;
 
-    width:45px;
-    height:45px;
+    width:46px;
+    height:46px;
 
     border:none;
     border-radius:50%;
 
     background:rgba(255,255,255,.85);
 
-    cursor:pointer;
+    font-size:22px;
 
-    font-size:20px;
+    cursor:pointer;
 
     z-index:999;
 
+    transition:.3s;
+
 }
 
+#musicBtn:hover{
+
+    transform:scale(1.08);
+
+}
 
 /* ==========================
       CUENTA REGRESIVA
@@ -79,9 +89,10 @@ body{
     position:absolute;
 
     left:50%;
+
     transform:translateX(-50%);
 
-    top:46%;
+    top:47%;
 
     width:82%;
 
@@ -89,21 +100,31 @@ body{
 
 }
 
+/* ---------- TÍTULO ---------- */
 
 .countdown-container h2{
 
-    font-size:30px;
+    width:100%;
 
     color:#ffffff;
 
-    margin-bottom:20px;
+    font-family:Georgia, serif;
 
     font-weight:600;
 
-    text-shadow: 0 0 5px rgba(0,0,0,.25);
+    font-size:clamp(18px,3vw,30px);
+
+    line-height:1.2;
+
+    text-align:center;
+
+    margin-bottom:12px;
+
+    text-shadow:0 0 6px rgba(0,0,0,.30);
 
 }
 
+/* ---------- CONTADOR ---------- */
 
 #countdown{
 
@@ -111,10 +132,13 @@ body{
 
     justify-content:center;
 
-    gap:35px;
+    align-items:center;
+
+    gap:clamp(10px,3vw,35px);
 
 }
 
+/* ---------- COLUMNA ---------- */
 
 #countdown div{
 
@@ -124,43 +148,45 @@ body{
 
     box-shadow:none;
 
-    padding:0;
-
-    min-width:85px;
+    min-width:clamp(48px,9vw,85px);
 
 }
 
+/* ---------- NÚMEROS ---------- */
 
 #countdown span{
 
     display:block;
 
-    font-size:48px;
+    color:#ffffff;
+
+    font-size:clamp(24px,6vw,48px);
 
     font-weight:bold;
 
-    color:#ffffff;
-
     line-height:1;
+
+    text-shadow:0 0 6px rgba(0,0,0,.25);
 
 }
 
+/* ---------- TEXTO ---------- */
 
 #countdown small{
 
     display:block;
 
-    margin-top:8px;
+    margin-top:6px;
 
     color:#ffffff;
 
-    font-size:16px;
+    font-size:clamp(10px,2vw,16px);
 
     font-weight:500;
 
+    text-shadow:0 0 4px rgba(0,0,0,.25);
+
 }
-
-
 /* ==========================
       LINK UBICACIÓN
 ========================== */
@@ -179,8 +205,9 @@ body{
 
     background:transparent;
 
-}
+    cursor:pointer;
 
+}
 
 /* ==========================
       LINK FORMULARIO
@@ -200,50 +227,109 @@ body{
 
     background:transparent;
 
-}
+    cursor:pointer;
 
+}
 
 /* ==========================
-      CELULAR
+      AJUSTES RESPONSIVE
 ========================== */
 
-@media(max-width:768px){
+@media (max-width:900px){
 
-.page{
+    .page{
 
-    width:95%;
+        width:min(96vw,700px);
 
-}
-
-.countdown-container{
-
-    top:42%;
+    }
 
 }
 
+@media (max-width:768px){
+
+    .countdown-container{
+
+        width:84%;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .page{
+
+        width:100%;
+
+        margin:0 auto;
+
+    }
+
+    .countdown-container{
+
+        width:86%;
+
+    }
+
+}
+/* ==========================
+      AJUSTES FINALES
+========================== */
+
+/* Evita que las imágenes tengan espacios blancos */
+img{
+    user-select:none;
+    -webkit-user-drag:none;
+}
+
+/* Suaviza la visualización */
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+/* Evita que el contador se desborde */
 #countdown{
 
-    gap:8px;
+    flex-wrap:nowrap;
 
 }
 
-#countdown div{
+/* Mejor distribución en pantallas pequeñas */
 
-    min-width:58px;
-    padding:8px;
+@media (max-width:600px){
+
+    #countdown{
+
+        justify-content:space-evenly;
+
+        width:100%;
+
+    }
+
+    #countdown div{
+
+        min-width:auto;
+
+    }
 
 }
 
-#countdown span{
+/* Ajuste para pantallas muy pequeñas */
 
-    font-size:22px;
+@media (max-width:380px){
 
-}
+    .countdown-container{
 
-.countdown-container h2{
+        width:90%;
 
-    font-size:16px;
+    }
 
-}
+    #countdown{
+
+        gap:8px;
+
+    }
 
 }
