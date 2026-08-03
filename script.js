@@ -70,3 +70,31 @@ function updateCountdown() {
 updateCountdown();
 
 setInterval(updateCountdown, 1000);
+// =========================
+// EFECTO DE APARICIÓN AL HACER SCROLL
+// =========================
+
+const pages = document.querySelectorAll(".page");
+
+const observer = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("visible");
+
+        }
+
+    });
+
+},{
+    threshold:0.15
+});
+
+
+pages.forEach(page=>{
+
+    observer.observe(page);
+
+});
