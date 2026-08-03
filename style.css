@@ -31,7 +31,14 @@ body{
 
     width:min(95vw,700px);
 
-    margin:25px auto;
+    min-height:100vh;
+
+    scroll-snap-align:start;
+
+    margin:0 auto;
+
+    display:flex;
+    align-items:center;
 
 }
 
@@ -331,5 +338,23 @@ html{
         gap:8px;
 
     }
+
+}
+/* ==========================
+   SCROLL POR PÁGINAS
+========================== */
+
+html{
+    scroll-snap-type:y mandatory;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+.page img{
+
+    width:100%;
+    height:auto;
 
 }
