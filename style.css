@@ -335,3 +335,19 @@ html{
     }
 
 }
+/* ==========================
+   EFECTO APARICIÓN SUAVE
+========================== */
+
+.page{
+
+    opacity:0;
+    transition:opacity 1.2s ease;
+
+}
+
+.page.visible{
+
+    opacity:1;
+
+}
