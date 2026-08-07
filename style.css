@@ -108,7 +108,7 @@ body{
 
     width:100%;
 
-    color:#ffffff;
+    color:#263757;
 
     font-family:Georgia, serif;
 
@@ -160,7 +160,7 @@ body{
 
     display:block;
 
-    color:#ffffff;
+    color:#263757;
 
     font-size:clamp(24px,6vw,48px);
 
@@ -180,7 +180,7 @@ body{
 
     margin-top:6px;
 
-    color:#ffffff;
+    color:#263757;
 
     font-size:clamp(10px,2vw,16px);
 
@@ -333,21 +333,5 @@ html{
         gap:8px;
 
     }
-
-}
-/* ==========================
-   EFECTO APARICIÓN SUAVE
-========================== */
-
-.page{
-
-    opacity:0.2;
-    transition:opacity 1.2s ease;
-
-}
-
-.page.visible{
-
-    opacity:1;
 
 }
